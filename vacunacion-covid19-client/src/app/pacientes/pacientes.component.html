@@ -1,0 +1,28 @@
+<div class="card border-secondary mb-3">
+    <div class="card-header">Pacientes </div>
+    <div class="card-body text-secondary">
+      <h5 class="card-title">Pacientes inscriptos para vacunación: </h5>
+      <div class="my-2 text-left">
+          <button class="btn btn-rounder btn-primary" [routerLink] = "['/pacientes/form']">Inscribir a la vacunación</button>
+      </div>
+
+      <table class="table table-bordered table-striped">
+          <thead>
+              <tr>
+                  <th>Cedula</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Fecha Nacimiento</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr  *ngFor="let p of paciente">
+                  <td>{{p.cedula}}</td>
+                  <td>{{p.nombre}}</td>
+                  <td>{{p.apellido}}</td>                  
+                  <td>{{p.fecha_nacimiento}}</td> 
+              </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
