@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
@@ -32,19 +31,17 @@ public class PacienteController {
 	}
 	
 	@PostMapping("/pacientes")
-	@ResponseStatus(HttpStatus.CREATED) 
-	public ResponseEntity<String> create(@RequestBody Paciente paciente) {
+	public ResponseEntity<Paciente> create(@RequestBody Paciente paciente) {
 		 LocalDate hoy = LocalDate.now();   
 		 LocalDate nacimiento = paciente.getFecha_nacimiento().toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); 
 		 long edad = ChronoUnit.YEARS.between(nacimiento, hoy);
-		 System.out.print(edad);
-		 System.out.print(pacienteService.findByID(paciente.getCedula()));
-		if(pacienteService.findByID(paciente.getCedula()) != null || edad < 18 ) {
-			return new ResponseEntity<>("No valido por reglas de negocio", HttpStatus.BAD_REQUEST);
+			if(pacienteService.findByID(paciente.getCedula()) != null || edad < 18 ) {
+			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
 		} else {
 			pacienteService.saveNew(paciente);
-			return new ResponseEntity<>("Usuario creado", HttpStatus.ACCEPTED);
+			return new ResponseEntity<Paciente>(paciente, HttpStatus.CREATED);
 		}
 		
 	}
 }
+
