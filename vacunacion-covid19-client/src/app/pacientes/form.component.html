@@ -1,5 +1,5 @@
-<div class="card bg-dark text-white">
-    <div class="card-header"> Pacientes </div>
+<div class="card bg-white text-dark">
+    <div class="card-header"> Datos del nuevo paciente: </div>
     <div class="card-body">
         <form >
             <div class= "form-group row">
@@ -9,7 +9,7 @@
                 </div>
             </div>
 
-            <div class= "form-group row">
+            <div class= "form-group row my-2">
                 <label for="apellido" class="col-form-label col-sm-2"> Nombre </label>
                 <div class= "col-sm-6"> 
                     <input type="text" class="form-control"  [(ngModel)]="paciente.nombre" name="apellido">
@@ -23,17 +23,21 @@
                 </div>
             </div>
 
-            <div class= "form-group row">
-                <label for="createAt" class="col-form-label col-sm-2">Fecha Nacimiento </label>
+            <div class= "form-group row my-2">
+                <label for="createAt" class="col-form-label col-sm-2"> Fecha Nacimiento </label>
                 <div class= "col-sm-6"> 
-                    <input type="text" class="form-control"  [(ngModel)]="paciente.fecha_nacimiento" name="createAt">
+                    <input type="text" class="form-control"  type="date" [(ngModel)]="paciente.fecha_nacimiento" name="createAt">
                 </div>
             </div>
-            <div class= "form-group row">
-                <div class= "col-sm-6">
+            <div class= "form-group row my-2">
+                <div class= "float-right my-3" >
                     <button class="btn btn-primary" role="button" (click) = 'create()'> Inscribir </button>
+                    <button class="btn btn-primary mx-2" role="button" [routerLink] = "['/pacientes']"> Ver pacientes </button>
                 </div>
             </div>
         </form>
+
     </div>
 </div>
+
+

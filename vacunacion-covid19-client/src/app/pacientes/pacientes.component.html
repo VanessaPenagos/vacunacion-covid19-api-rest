@@ -1,13 +1,8 @@
-<div class="card border-secondary mb-3">
-    <div class="card-header">Pacientes </div>
+<h5 class="card-title lead" style="text-align: center;">Pacientes inscritos para vacunación</h5>
+<div class="card border-secondary mb-3 my-5">
     <div class="card-body text-secondary">
-      <h5 class="card-title">Pacientes inscriptos para vacunación: </h5>
-      <div class="my-2 text-left">
-          <button class="btn btn-rounder btn-primary" [routerLink] = "['/pacientes/form']">Inscribir a la vacunación</button>
-      </div>
-
-      <table class="table table-bordered table-striped">
-          <thead>
+       <table class="table">
+          <thead class="table-light">
               <tr>
                   <th>Cedula</th>
                   <th>Nombre</th>
@@ -26,3 +21,6 @@
       </table>
     </div>
   </div>
+<div class="my-4" >
+    <button style="align-self: flex-end;" class="btn btn-rounder btn-primary" [routerLink] = "['/pacientes/form']">Inscribir a la vacunación</button>
+</div>

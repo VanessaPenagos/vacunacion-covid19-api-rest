@@ -21,11 +21,11 @@ export class FormComponent implements OnInit {
   }
 
   public create():void{
-    this.pacienteService.create(this.paciente).subscribe(
-      paciente => {
-        this.router.navigate(['/pacientes'])
-        swal.fire('Paciente guardado',`paciente ${this.paciente.nombre} creado con exito!`, 'success')
-      }      
-    )
+      this.pacienteService.create(this.paciente).subscribe(
+        paciente => {
+          this.router.navigate(['/pacientes'])
+          swal.fire('Paciente guardado',`paciente ${this.paciente.nombre} creado con exito!`, 'success')
+        }      
+      )     
   }
 }

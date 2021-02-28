@@ -7,6 +7,8 @@ import { RouterModule, Routes} from '@angular/router';
 import { FormComponent } from './pacientes/form.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
+
 
 const routes: Routes = [
   {path:'', redirectTo:'/pacientes', pathMatch:'full'},
@@ -18,13 +20,15 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     PacientesComponent,
-    FormComponent
+    FormComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [PacienteService],
   bootstrap: [AppComponent]
