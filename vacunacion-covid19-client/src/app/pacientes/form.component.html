@@ -1,38 +1,38 @@
 <div class="card bg-white text-dark">
-    <div class="card-header"> Datos del nuevo paciente: </div>
+    <div class="card-header"> Datos del nuevo usuario: </div>
     <div class="card-body">
         <form >
             <div class= "form-group row">
                 <label for="nombre" class="col-form-label col-sm-2"> Cedula </label>
                 <div class= "col-sm-6"> 
-                    <input type="text" class="form-control" [(ngModel)]="paciente.cedula" name="nombre">
+                    <input type="text" class="form-control" [(ngModel)]="paciente.cedula" name="nombre" required>
                 </div>
             </div>
 
             <div class= "form-group row my-2">
                 <label for="apellido" class="col-form-label col-sm-2"> Nombre </label>
                 <div class= "col-sm-6"> 
-                    <input type="text" class="form-control"  [(ngModel)]="paciente.nombre" name="apellido">
+                    <input type="text" class="form-control"  [(ngModel)]="paciente.nombre" name="apellido" required>
                 </div>
             </div>
 
             <div class= "form-group row">
                 <label for="email" class="col-form-label col-sm-2"> Apellido </label>
                 <div class= "col-sm-6"> 
-                    <input type="text" class="form-control"  [(ngModel)]="paciente.apellido" name="email">
+                    <input type="text" class="form-control"  [(ngModel)]="paciente.apellido" name="email" required>
                 </div>
             </div>
 
             <div class= "form-group row my-2">
-                <label for="createAt" class="col-form-label col-sm-2"> Fecha Nacimiento </label>
+                <label for="fecha_n" class="col-form-label col-sm-2"> Fecha Nacimiento </label>
                 <div class= "col-sm-6"> 
-                    <input type="text" class="form-control"  type="date" [(ngModel)]="paciente.fecha_nacimiento" name="createAt">
+                    <input type="text" class="form-control" type="date" [(ngModel)]="paciente.fecha_nacimiento" name="fecha_n" required >
                 </div>
             </div>
             <div class= "form-group row my-2">
                 <div class= "float-right my-3" >
                     <button class="btn btn-primary" role="button" (click) = 'create()'> Inscribir </button>
-                    <button class="btn btn-primary mx-2" role="button" [routerLink] = "['/pacientes']"> Ver pacientes </button>
+                    <button class="btn btn-primary mx-2" role="button" [routerLink] = "['/pacientes']"> Ver inscritos </button>
                 </div>
             </div>
         </form>
